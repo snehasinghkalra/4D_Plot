@@ -1,0 +1,16 @@
+import pandas as pd
+import plotly
+import plotly.express as px
+
+#Read data from csv
+data = pd.read_csv("For_Polynomial_Plot-13thSep.csv")
+
+#4D Scatterplot for Profit Margin
+plot_pm = px.scatter_3d(data, x='RND', y='Marketing', z='Cost-Efficiency', color='Profit_Margin')
+plot_pm.show()
+plotly.offline.plot(plot_pm,filename="Profit_Margin.html")
+
+#4D Scatterplot for ROS
+plot_ros = px.scatter_3d(data, x='RND', y='Marketing', z='Cost-Efficiency', color='ROS')
+plot_ros.show()
+plotly.offline.plot(plot_ros,filename="ROS.html")
